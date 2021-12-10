@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './CreateProductForm/css/style.css'
 import './CreateProductForm/css/responsive.css'
-import './CreateProductForm/fonts/fontawesome-free-5.15.4-web/css/all.min.css'
 
 export default function CreateProductForm() {
 
