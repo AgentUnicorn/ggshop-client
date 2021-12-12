@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './CreateProductForm/css/style.css'
 import './CreateProductForm/css/responsive.css'
+import Swal from 'sweetalert2'
 
 export default function CreateProductForm() {
 
@@ -26,8 +27,23 @@ export default function CreateProductForm() {
         console.log(newProduct);
         axios({
             method: 'POST',
-            url: 'http://localhost:3000/api/products',
+            url: process.env.REACT_APP_API_URL + '/products',
             data: newProduct
+        }).then(res => {
+            if(res.status == 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        }).catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: err.message,
+            })
         });
     }
 
