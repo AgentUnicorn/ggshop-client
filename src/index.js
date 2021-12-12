@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+// import { QueryParamProvider } from 'use-query-params';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    {/* <QueryParamProvider ReactRouterRoute={Route}> */}
+      <App />
+    {/* </QueryParamProvider> */}
   </BrowserRouter>,
   document.getElementById('root')
 );
