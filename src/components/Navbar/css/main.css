@@ -21,8 +21,11 @@ ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0,0,0,.125);
+  overflow: hidden;
 }
 #header .header__logo {
+  padding-left: 35px;
   height: 40px;
 }
 #header #nav {
@@ -32,7 +35,8 @@ ul li a {
 }
 #header #nav li {
   display: inline-block;
-  padding: 26px 17px;
+  padding: 26px;
+  margin-top: 15px;
 }
 #header #nav li a {
   color: #0e0e0e;
@@ -47,7 +51,7 @@ ul li a {
   right: 0;
   height: 2px;
   display: block;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #242368;
 }
 #header #nav li:hover a {
@@ -116,6 +120,8 @@ ul li a {
   cursor: pointer;
 }
 #header #user-notification li {
+  margin-top: 15
+px;
   display: inline-block;
   width: 56px;
   height: 56px;
