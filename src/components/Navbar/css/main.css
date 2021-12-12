@@ -1,0 +1,187 @@
+html {
+  font-family: "SF Pro Display", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+#main {
+  overflow: hidden;
+}
+
+#header {
+  margin: auto;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0,0,0,.125);
+  overflow: hidden;
+}
+#header .header__logo {
+  padding-left: 35px;
+  height: 40px;
+}
+#header #nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#header #nav li {
+  display: inline-block;
+  padding: 26px;
+  margin-top: 15px;
+}
+#header #nav li a {
+  color: #0e0e0e;
+  font-size: 18px;
+  display: block;
+  position: relative;
+}
+#header #nav li a::after {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  display: block;
+  margin-top: 10px;
+  background-color: #242368;
+}
+#header #nav li:hover a {
+  font-weight: 700;
+  color: #242368;
+}
+#header #nav li:hover a::after {
+  display: block;
+  content: "";
+}
+#header #search {
+  position: relative;
+}
+#header #search .search__input {
+  padding: 9px 126px;
+  border-radius: 23px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+#header #search .search__input:focus {
+  border: 1px solid #06c1d4;
+}
+#header #search .search__input:focus ~ .search__show {
+  display: block;
+}
+#header #search .search__show {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+#header #search .search__show li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+}
+#header #search .search__show li img {
+  width: 54px;
+}
+#header #search .search__show li a {
+  display: block;
+  color: #0e0e0e;
+  padding: 1px 2px;
+  min-width: 116px;
+}
+#header #search .search__show li .search__price {
+  color: red;
+}
+#header #search button {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+}
+#header #search .search__icon {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+#header #user-notification li {
+  margin-top: 15
+px;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+}
+#header #user-notification li a {
+  color: #0e0e0e;
+  font-size: 23px;
+  line-height: 56px;
+}
+
+.swipe {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 20px;
+
+}
+.swipe .swipe__sale {
+  display: flex;
+  margin-left: 16px;
+  margin-right: 26px;
+  flex-direction: column;
+  flex-basis: 2;
+}
+.swipe .swipe__sale .slider {
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.swipe .swipe__sale .sale {
+  display: flex;
+  width: 100%;
+}
+.swipe .swipe__sale .sale .sale__item {
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.swipe .swipe__sale .sale .sale__item .sale__desc {
+  font-size: 14px;
+  padding: 7px 15px;
+}
+.swipe .swipe__sale .sale .sale__item:first-child {
+  border-bottom-left-radius: 4px;
+}
+.swipe .swipe__sale .sale .sale__item:last-child {
+  border-bottom-right-radius: 4px;
+}
+.swipe .swipe__news {
+  flex-basis: 45%;
+}
+.swipe .swipe__news .news__item {
+  padding: 10px 0px;
+  cursor: pointer;
+}
+.swipe .swipe__news .more-news {
+  font-size: 18px;
+  color: #171c27;
+  cursor: pointer;
+}
+.swipe .swipe__news .more-news i {
+  color: #06c1d4;
+}
+
+/*# sourceMappingURL=main.css.map */

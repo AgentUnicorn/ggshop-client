@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import './CreateProductForm/css/style.css'
 import './CreateProductForm/css/responsive.css'
+import Swal from 'sweetalert2'
 
 export default function CreateProductForm() {
 
@@ -23,15 +24,26 @@ export default function CreateProductForm() {
 
     function submitHandler(e) {
         e.preventDefault();
-        console.log(newProduct);
         axios({
             method: 'POST',
-            url: 'http://localhost:8000/api/products',
+            url: process.env.REACT_APP_API_URL + '/products',
             data: newProduct
         }).then(res => {
-            console.log(res.status)
+            if(res.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        }).catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: err.message,
+            })
         });
-        console.log(newProduct)
     }
 
 
@@ -112,13 +124,12 @@ export default function CreateProductForm() {
                             </div>
                             <div className="form-control">
                                 <label for="image">Hình ảnh sản phẩm</label>
-                                <input type="text" name="imageURL" onChange={handleChange} value={newProduct.image} placeholder="Hình ảnh sản phẩm" id="image" />
+                                <input type="text" name="imageURL" onChange={handleChange} value={newProduct.imageURL} placeholder="Hình ảnh sản phẩm" id="image" />
                             </div>
                             <div className="form-control">
                                 <label for="desc">Tên sản phẩm</label>
                                 <textarea name="description" id="desc" onChange={handleChange} value={newProduct.description} cols="30" rows="10" placeholder="Mô tả sản phẩm....."></textarea>
                             </div>
-
                             <button type="submit">Lưu Sản phẩm</button>
                             <button type="reset">Làm lại</button>
                         </form>
