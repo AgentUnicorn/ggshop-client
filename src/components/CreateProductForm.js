@@ -12,7 +12,7 @@ export default function CreateProductForm() {
         type: "",
         currency: "",
         price: "",
-        image: "",
+        imageURL: "",
         description: ""
     });
 
@@ -26,9 +26,12 @@ export default function CreateProductForm() {
         console.log(newProduct);
         axios({
             method: 'POST',
-            url: 'http://localhost:3000/api/products',
+            url: 'http://localhost:8000/api/products',
             data: newProduct
+        }).then(res => {
+            console.log(res.status)
         });
+        console.log(newProduct)
     }
 
 
@@ -109,7 +112,7 @@ export default function CreateProductForm() {
                             </div>
                             <div className="form-control">
                                 <label for="image">Hình ảnh sản phẩm</label>
-                                <input type="text" name="image" onChange={handleChange} value={newProduct.image} placeholder="Hình ảnh sản phẩm" id="image" />
+                                <input type="text" name="imageURL" onChange={handleChange} value={newProduct.image} placeholder="Hình ảnh sản phẩm" id="image" />
                             </div>
                             <div className="form-control">
                                 <label for="desc">Tên sản phẩm</label>
