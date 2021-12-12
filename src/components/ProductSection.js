@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Row, Card } from "react-bootstrap";
+import { Button, Container, Row, CardGroup } from "react-bootstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SingleProduct from "./SingleProduct";
@@ -30,11 +30,15 @@ export default function ProductSection() {
   return (
     <div>
       <Container>
-        <Row>{products && products.map((p) => <SingleProduct {...p} />)}</Row>
         <Row>
-          <Button
+          <CardGroup>
+            {products && products.map((p) => <SingleProduct {...p} />)}
+          </CardGroup>
+        </Row>
+        <Row className="flex justify-content-center">
+          <Button 
             variant="primary"
-            className="w-50 flex justify-content-center my-5"
+            className="w-50 my-5"
             onClick={() => setPage(page + 1)}
           >
             Next
@@ -45,8 +49,3 @@ export default function ProductSection() {
   );
 }
 
-// const Product = ({ name, brand, type }) => (
-  
-//     <SingleProduct name={name} />
-  
-// );
