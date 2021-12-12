@@ -13,7 +13,7 @@ export default function CreateProductForm() {
         type: "",
         currency: "",
         price: "",
-        image: "",
+        imageURL: "",
         description: ""
     });
 
@@ -125,7 +125,7 @@ export default function CreateProductForm() {
                             </div>
                             <div className="form-control">
                                 <label for="image">Hình ảnh sản phẩm</label>
-                                <input type="text" name="image" onChange={handleChange} value={newProduct.image} placeholder="Hình ảnh sản phẩm" id="image" />
+                                <input type="text" name="imageURL" onChange={handleChange} value={newProduct.imageURL} placeholder="Hình ảnh sản phẩm" id="image" />
                             </div>
                             <div className="form-control">
                                 <label for="desc">Tên sản phẩm</label>
