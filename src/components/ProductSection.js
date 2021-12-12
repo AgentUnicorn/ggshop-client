@@ -27,25 +27,46 @@ export default function ProductSection() {
     getProducts(page);
   }, [page]);
 
-  return (
-    <div>
-      <Container>
-        <Row>
-          <CardGroup>
-            {products && products.map((p) => <SingleProduct {...p} />)}
-          </CardGroup>
-        </Row>
-        <Row className="flex justify-content-center">
-          <Button 
-            variant="primary"
-            className="w-50 my-5"
-            onClick={() => setPage(page + 1)}
-          >
-            Next
-          </Button>
-        </Row>
-      </Container>
-    </div>
-  );
+  if(products.length === 0) {
+    return (
+      <div>
+
+        <h1>Oops no more product</h1>
+
+      </div>
+    )
+  } else {
+
+    return (
+      <div>
+        <Container>
+          <Row>
+            <CardGroup>
+              {products && products.map((p) => <SingleProduct {...p} />)}
+            </CardGroup>
+          </Row>
+          <Row className="flex mx-auto w-25">
+            <Button 
+              variant="primary"
+              className="w-50 my-5"
+              onClick={() => setPage(page - 1)}
+              disabled = {page === 1}
+            >
+              Previous
+            </Button>
+            <Button 
+              variant="primary"
+              className="w-50 my-5"
+              onClick={() => setPage(page + 1)}
+            >
+              Next
+            </Button>
+          </Row>
+        </Container>
+      </div>
+    );
+
+  }
+
 }
 
