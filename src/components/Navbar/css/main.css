@@ -120,8 +120,7 @@ ul li a {
   cursor: pointer;
 }
 #header #user-notification li {
-  margin-top: 15
-px;
+  margin-top: 15px;
   display: inline-block;
   width: 56px;
   height: 56px;
@@ -136,8 +135,8 @@ px;
   display: flex;
   justify-content: flex-start;
   padding-top: 20px;
-
 }
+
 .swipe .swipe__sale {
   display: flex;
   margin-left: 16px;

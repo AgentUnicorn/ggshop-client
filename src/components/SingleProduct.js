@@ -6,13 +6,11 @@ export default function SingleProduct(p) {
 
   function capitalize(str) {
     let arr = str.split(' ');
-
     for(let i = 0; i < arr.length; i++) {
       arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
     return arr.join(' ');
   }
-  
   return (
     <Card className="mx-3 mt-5" style={{border: "1px solid rgba(0,0,0,.125)"}}>
       <Card.Img variant="top" src={p.imageURL ? p.imageURL : defaultIMG} />

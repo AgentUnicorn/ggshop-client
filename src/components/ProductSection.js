@@ -16,6 +16,7 @@ export default function ProductSection() {
       axios
         .get(`${process.env.REACT_APP_API_URL}/products?page=${page}`)
         .then((res) => {
+          console.log(res);
           let productsArray = res.data;
           setProducts(productsArray);
           console.log(products);
@@ -30,13 +31,10 @@ export default function ProductSection() {
   if(products.length === 0) {
     return (
       <div>
-
         <h1>Oops no more product</h1>
-
       </div>
     )
   } else {
-
     return (
       <div>
         <Container>
@@ -65,8 +63,6 @@ export default function ProductSection() {
         </Container>
       </div>
     );
-
   }
-
 }
 

@@ -14,7 +14,7 @@ export default function FooterComp() {
             {/* Logo */}
             <div className="footer_widget-firstColumn">
               <a href="#">
-                <img src={brandlogo} className="footer_brandlogo"></img>
+                <img src={brandlogo} alt="Brand logo" className="footer_brandlogo"></img>
               </a>
               {/* dummy test */}
               <p> 
@@ -47,7 +47,7 @@ export default function FooterComp() {
             <h6>Về chúng tôi</h6>
               <ul className="footer_links">
                 <li><a href="#">Lịch sử thành lập</a></li>
-                <li><a href="#">Gia trị cốt lõi</a></li>
+                <li><a href="#">Giá trị cốt lõi</a></li>
                 <li><a href="#">Tầm nhìn và sứ mệnh</a></li>
               </ul>
           </div>
